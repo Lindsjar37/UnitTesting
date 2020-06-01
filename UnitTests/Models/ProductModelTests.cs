@@ -158,6 +158,21 @@ namespace UnitTests
             Assert.AreEqual(result.Description, null);
         }
 
+        // Test set description to valid string 
+        [TestMethod]
+        public void ProductModel_Set_Description_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = new ProductModel();
+            result.Description = "Desk Lamp";
+
+            // Assert
+            Assert.AreEqual(result.Description, "Desk Lamp");
+        }
+
+
 
         // Test default get date 
         [TestMethod]
