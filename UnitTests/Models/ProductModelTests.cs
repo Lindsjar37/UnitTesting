@@ -102,6 +102,20 @@ namespace UnitTests
             Assert.AreEqual(result.Id, null);
         }
 
+        // Test set ID to valid string 
+        [TestMethod]
+        public void ProductModel_Set_ID_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = new ProductModel();
+            result.Id = "Jason";
+
+            // Assert
+            Assert.AreEqual(result.Id, "Jason");
+        }
+
         // Test default get ratings 
         [TestMethod]
         public void ProductModel_Get_Ratings_Default_Should_Pass()
