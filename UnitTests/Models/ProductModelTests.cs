@@ -325,5 +325,20 @@ namespace UnitTests
             // Assert
             Assert.AreEqual(result.Url, null);
         }
+
+        // Test set url to valid string 
+        [TestMethod]
+        public void ProductModel_Set_Url_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = new ProductModel();
+            string url = "https://www.seattleu.edu/mysu/";
+            result.Url = "https://www.seattleu.edu/mysu/";
+
+            // Assert
+            Assert.AreEqual(result.Url, url);
+        }
     }
 }
