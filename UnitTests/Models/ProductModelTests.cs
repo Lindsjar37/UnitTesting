@@ -340,5 +340,25 @@ namespace UnitTests
             // Assert
             Assert.AreEqual(result.Url, url);
         }
+
+        // Test object toString method (DateTime changes, so make sure date is same for each) 
+        [TestMethod]
+        public void ProductModel_Get_ToString_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+            var result2 = new ProductModel();
+            DateTime thisDate = new DateTime(2008, 3, 15);
+            result.Date = thisDate;
+            result2.Date = thisDate; 
+            
+            // Act
+            string resultString = result.ToString();
+            string resultString2 = result2.ToString();
+            // Assert
+            Assert.AreEqual(resultString, resultString2);
+        }
+
+
     }
 }
