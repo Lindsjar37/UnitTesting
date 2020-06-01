@@ -30,7 +30,7 @@ namespace UnitTests
             var result = new ProductModel();
 
             // Assert
-            Assert.AreEqual(result.Logistics, "");
+            Assert.AreEqual("", result.Logistics);
         }
 
         // Test setting Logistics to a string value
@@ -38,13 +38,13 @@ namespace UnitTests
         public void ProductModel_Set_Logistics_Valid_Should_Pass()
         {
             // Arrange
+            var result = new ProductModel();
 
             // Act
-            var result = new ProductModel();
             result.Logistics = "Transported";
 
             // Assert
-            Assert.AreEqual(result.Logistics, "Transported");
+            Assert.AreEqual("Transported", result.Logistics);
         }
 
         // Test setting Logistics to a Null value (a string can be Null) 
@@ -52,13 +52,13 @@ namespace UnitTests
         public void ProductModel_Set_Logistics_Null_Should_Pass()
         {
             // Arrange
+            var result = new ProductModel();
 
             // Act
-            var result = new ProductModel();
             result.Logistics = null; 
 
             // Assert
-            Assert.AreEqual(result.Logistics, null);
+            Assert.AreEqual(null, result.Logistics);
         }
 
         // Test default get e-mail
@@ -66,12 +66,13 @@ namespace UnitTests
         public void ProductModel_Get_Email_Default_Should_Pass()
         {
             // Arrange
-
-            // Act
             var result = new ProductModel();
 
+            // Act
+            string unknown = "Unknown";
+
             // Assert
-            Assert.AreEqual(result.Email, "Unknown");
+            Assert.AreEqual(unknown, result.Email);
         }
 
         // Test set e-mail with valid string value
@@ -79,13 +80,13 @@ namespace UnitTests
         public void ProductModel_Set_Email_Valid_Should_Pass()
         {
             // Arrange
+            var result = new ProductModel();
 
             // Act
-            var result = new ProductModel();
             result.Email = "js@ProductModel.com";
 
             // Assert
-            Assert.AreEqual(result.Email, "js@ProductModel.com");
+            Assert.AreEqual("js@ProductModel.com", result.Email);
         }
 
 
@@ -99,7 +100,7 @@ namespace UnitTests
             var result = new ProductModel();
 
             // Assert
-            Assert.AreEqual(result.Id, null);
+            Assert.AreEqual(null, result.Id);
         }
 
         // Test set ID to valid string 
@@ -107,13 +108,13 @@ namespace UnitTests
         public void ProductModel_Set_ID_Valid_Should_Pass()
         {
             // Arrange
+            var result = new ProductModel();
 
             // Act
-            var result = new ProductModel();
             result.Id = "Jason";
 
             // Assert
-            Assert.AreEqual(result.Id, "Jason");
+            Assert.AreEqual("Jason", result.Id);
         }
 
         // Test default get ratings 
@@ -121,10 +122,10 @@ namespace UnitTests
         public void ProductModel_Get_Ratings_Default_Should_Pass()
         {
             // Arrange
+            int[] rating = new int[] { 5 };
 
             // Act
             var result = new ProductModel();
-            int[] rating = new int[] { 5 };
 
             // Assert
             CollectionAssert.AreEqual(rating, result.Ratings);
@@ -135,14 +136,14 @@ namespace UnitTests
         public void ProductModel_Set_Ratings_Valid_Should_Pass()
         {
             // Arrange
-
-            // Act
             var result = new ProductModel();
-            result.Ratings = new int[] { 1 };
             int[] rating = new int[] { 1 };
 
+            // Act
+            result.Ratings = new int[] { 1 };
+            
             // Assert
-            CollectionAssert.AreEqual(result.Ratings, rating);
+            CollectionAssert.AreEqual(rating, result.Ratings);
         }
 
         // Test get description default (should be null) 
@@ -155,7 +156,7 @@ namespace UnitTests
             var result = new ProductModel();
 
             // Assert
-            Assert.AreEqual(result.Description, null);
+            Assert.AreEqual(null, result.Description);
         }
 
         // Test set description to valid string 
@@ -163,13 +164,13 @@ namespace UnitTests
         public void ProductModel_Set_Description_Valid_Should_Pass()
         {
             // Arrange
+            var result = new ProductModel();
 
             // Act
-            var result = new ProductModel();
             result.Description = "Desk Lamp";
 
             // Assert
-            Assert.AreEqual(result.Description, "Desk Lamp");
+            Assert.AreEqual("Desk Lamp", result.Description);
         }
 
         // Test default get date 
@@ -190,11 +191,11 @@ namespace UnitTests
         public void ProductModel_Set_Date_Valid_Should_Pass()
         {
             // Arrange
-
-            // Act
             var result = new ProductModel();
             DateTime thisDate = new DateTime(2008, 3, 15);
-            result.Date = thisDate; 
+
+            // Act
+            result.Date = new DateTime(2008, 3, 15);
 
             // Assert
             Assert.AreEqual(thisDate.ToShortDateString(), result.Date.ToShortDateString());
@@ -209,9 +210,8 @@ namespace UnitTests
             // Act
             var result = new ProductModel();
 
-
             // Assert
-            Assert.AreEqual(result.Image, null); 
+            Assert.AreEqual(null, result.Image); 
         }
 
         // Test set image to valid string 
@@ -219,14 +219,14 @@ namespace UnitTests
         public void ProductModel_Set_Image_Valid_Should_Pass()
         {
             // Arrange
-
-            // Act
             var result = new ProductModel();
             string image = "Img";
+
+            // Act
             result.Image = "Img";
 
             // Assert
-            Assert.AreEqual(result.Image, image);
+            Assert.AreEqual(image, result.Image);
         }
 
         // Test get maker default (not set in constructor, should be null)
@@ -239,7 +239,7 @@ namespace UnitTests
             var result = new ProductModel();
    
             // Assert
-            Assert.AreEqual(result.Maker, null);
+            Assert.AreEqual(null, result.Maker);
         }
 
         // Test set maker to valid string 
@@ -247,14 +247,14 @@ namespace UnitTests
         public void ProductModel_Set_Maker_Valid_Should_Pass()
         {
             // Arrange
-
-            // Act
             var result = new ProductModel();
             string maker = "Jessica Jones";
+
+            // Act
             result.Maker = "Jessica Jones";
 
             // Assert
-            Assert.AreEqual(result.Maker, maker);
+            Assert.AreEqual(maker, result.Maker);
         }
 
         // Test get sequence default (not set in constructor, should be null)
@@ -267,7 +267,7 @@ namespace UnitTests
             var result = new ProductModel();
 
             // Assert
-            Assert.AreEqual(result.Sequence, null);
+            Assert.AreEqual(null, result.Sequence);
         }
 
         // Test set sequence to valid string 
@@ -275,14 +275,14 @@ namespace UnitTests
         public void ProductModel_Set_Sequence_Valid_Should_Pass()
         {
             // Arrange
-
-            // Act
             var result = new ProductModel();
             string sequence = "Sequence";
+
+            // Act
             result.Sequence = "Sequence";
 
             // Assert
-            Assert.AreEqual(result.Sequence, sequence);
+            Assert.AreEqual(sequence, result.Sequence);
         }
 
         // Test get title default (not set in constructor, should be null)
@@ -295,7 +295,7 @@ namespace UnitTests
             var result = new ProductModel();
 
             // Assert
-            Assert.AreEqual(result.Title, null);
+            Assert.AreEqual(null, result.Title);
         }
 
         // Test set title to valid string 
@@ -303,14 +303,14 @@ namespace UnitTests
         public void ProductModel_Set_Title_Valid_Should_Pass()
         {
             // Arrange
-
-            // Act
             var result = new ProductModel();
             string title = "A Good Title";
+
+            // Act
             result.Title = "A Good Title";
 
             // Assert
-            Assert.AreEqual(result.Title, title);
+            Assert.AreEqual(title, result.Title);
         }
 
         // Test get url default (not set in constructor, should be null)
@@ -323,7 +323,7 @@ namespace UnitTests
             var result = new ProductModel();
 
             // Assert
-            Assert.AreEqual(result.Url, null);
+            Assert.AreEqual(null, result.Url);
         }
 
         // Test set url to valid string 
@@ -331,14 +331,14 @@ namespace UnitTests
         public void ProductModel_Set_Url_Valid_Should_Pass()
         {
             // Arrange
-
-            // Act
             var result = new ProductModel();
             string url = "https://www.seattleu.edu/mysu/";
+
+            // Act
             result.Url = "https://www.seattleu.edu/mysu/";
 
             // Assert
-            Assert.AreEqual(result.Url, url);
+            Assert.AreEqual(url, result.Url);
         }
 
         // Test object toString method (DateTime changes, so make sure date is same for each) 
@@ -350,18 +350,19 @@ namespace UnitTests
             var result2 = new ProductModel();
             DateTime thisDate = new DateTime(2008, 3, 15);
             result.Date = thisDate;
-            result2.Date = thisDate; 
-            
+            result2.Date = thisDate;
+            string resultString2 = result2.ToString();
+
             // Act
             string resultString = result.ToString();
-            string resultString2 = result2.ToString();
+
             // Assert
-            Assert.AreEqual(resultString, resultString2);
+            Assert.AreEqual(resultString2, resultString);
         }
 
         // Test get average rating for null entry (should return 0) 
         [TestMethod]
-        public void ProductModel_Get_AverageRating_Null_Should_Pass()
+        public void ProductModel_Get_AverageRating_DefaultNull_Should_Pass()
         {
             // Arrange
             var result = new ProductModel();
@@ -371,16 +372,15 @@ namespace UnitTests
             int average = result.AverageRating(); 
 
             // Assert
-            Assert.AreEqual(average, 0);
+            Assert.AreEqual(0, average);
         }
 
-        // Test get average rating for Default entry (single object)
+        // Test get average rating for Default entry (single object, default is 5)
         [TestMethod]
         public void ProductModel_Get_AverageRating_Default_Should_Pass()
         {
             // Arrange
             var result = new ProductModel();
-
 
             // Act
             int average = result.AverageRating();
@@ -406,7 +406,7 @@ namespace UnitTests
 
         // Test get average rating total (if total == 0, return 0)  
         [TestMethod]
-        public void ProductModel_Get_AverageRating_Total_Should_Pass()
+        public void ProductModel_Get_AverageRating_DefaultTotal_Should_Pass()
         {
             // Arrange
             var result = new ProductModel();
@@ -419,5 +419,19 @@ namespace UnitTests
             Assert.AreEqual(0, average);
         }
 
+        // Test get average rating count (if count == 0, return 0)  
+        [TestMethod]
+        public void ProductModel_Get_AverageRating_DefaultCount_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+            result.Ratings = new int[] { };
+
+            // Act
+            int average = result.AverageRating();
+
+            // Assert
+            Assert.AreEqual(0, average);
+        }
     }
 }
