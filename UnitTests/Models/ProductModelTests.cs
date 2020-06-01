@@ -47,20 +47,6 @@ namespace UnitTests
             Assert.AreEqual("Transported", result.Logistics);
         }
 
-        // Test setting Logistics to a Null value (a string can be Null) 
-        [TestMethod]
-        public void ProductModel_Set_Logistics_Null_Should_Pass()
-        {
-            // Arrange
-            var result = new ProductModel();
-
-            // Act
-            result.Logistics = null; 
-
-            // Assert
-            Assert.AreEqual(null, result.Logistics);
-        }
-
         // Test default get e-mail
         [TestMethod]
         public void ProductModel_Get_Email_Default_Should_Pass()
