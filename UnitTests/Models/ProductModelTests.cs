@@ -242,5 +242,19 @@ namespace UnitTests
             Assert.AreEqual(result.Maker, null);
         }
 
+        // Test set maker to valid string 
+        [TestMethod]
+        public void ProductModel_Set_Maker_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = new ProductModel();
+            string maker = "Jessica Jones";
+            result.Maker = "Jessica Jones";
+
+            // Assert
+            Assert.AreEqual(result.Maker, maker);
+        }
     }
 }
