@@ -297,5 +297,33 @@ namespace UnitTests
             // Assert
             Assert.AreEqual(result.Title, null);
         }
+
+        // Test set title to valid string 
+        [TestMethod]
+        public void ProductModel_Set_Title_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = new ProductModel();
+            string title = "A Good Title";
+            result.Title = "A Good Title";
+
+            // Assert
+            Assert.AreEqual(result.Title, title);
+        }
+
+        // Test get url default (not set in constructor, should be null)
+        [TestMethod]
+        public void ProductModel_Get_Url_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = new ProductModel();
+
+            // Assert
+            Assert.AreEqual(result.Url, null);
+        }
     }
 }
