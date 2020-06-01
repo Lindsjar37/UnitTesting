@@ -200,6 +200,20 @@ namespace UnitTests
             Assert.AreEqual(thisDate.ToShortDateString(), result.Date.ToShortDateString());
         }
 
+        // Test default get image (not set in constructor, should be null)
+        [TestMethod]
+        public void ProductModel_Get_Image_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = new ProductModel();
+
+
+            // Assert
+            Assert.AreEqual(result.Image, null); 
+        }
+
 
 
     }
