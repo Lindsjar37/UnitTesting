@@ -7,6 +7,7 @@ namespace UnitTests
     [TestClass]
     public class ProductModelTests
     {
+        // Test if default constructor is not Null 
         [TestMethod]
         public void ProductModel_Constructor_Default_Should_Pass()
         {
@@ -19,6 +20,75 @@ namespace UnitTests
             Assert.IsNotNull(result);
         }
 
+        // Test if default Logistics is an empty string
+        [TestMethod]
+        public void ProductModel_Get_Logistics_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = new ProductModel();
+
+            // Assert
+            Assert.AreEqual(result.Logistics, "");
+        }
+
+        // Test setting Logistics to a string value
+        [TestMethod]
+        public void ProductModel_Set_Logistics_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = new ProductModel();
+            result.Logistics = "Transported";
+
+            // Assert
+            Assert.AreEqual(result.Logistics, "Transported");
+        }
+
+        // Test setting Logistics to a Null value (a string can be Null) 
+        [TestMethod]
+        public void ProductModel_Set_Logistics_Null_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = new ProductModel();
+            result.Logistics = null; 
+
+            // Assert
+            Assert.AreEqual(result.Logistics, null);
+        }
+
+        // Test default get e-mail
+        [TestMethod]
+        public void ProductModel_Get_Email_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = new ProductModel();
+
+            // Assert
+            Assert.AreEqual(result.Email, "Unknown");
+        }
+
+        // Test default get ratings 
+        [TestMethod]
+        public void ProductModel_Get_Ratings_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = new ProductModel();
+            int[] rating = new int[] { 5 };
+
+            // Assert
+            CollectionAssert.AreEqual(rating, result.Ratings);
+        }
+
+        // Test default get date 
         [TestMethod]
         public void ProductModel_Get_Date_Default_Should_Pass()
         {
@@ -30,5 +100,10 @@ namespace UnitTests
             // Assert
             Assert.AreEqual(DateTime.UtcNow.ToShortDateString(), result.Date.ToShortDateString());
         }
+
+
+
+
+
     }
 }
