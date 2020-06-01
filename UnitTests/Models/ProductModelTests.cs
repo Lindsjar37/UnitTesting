@@ -374,6 +374,20 @@ namespace UnitTests
             Assert.AreEqual(average, 0);
         }
 
+        // Test get average rating for Default entry (single object)
+        [TestMethod]
+        public void ProductModel_Get_AverageRating_Default_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+
+
+            // Act
+            int average = result.AverageRating();
+
+            // Assert
+            Assert.AreEqual(average, 5);
+        }
 
 
     }
