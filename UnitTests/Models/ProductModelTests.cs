@@ -89,6 +89,18 @@ namespace UnitTests
         }
 
 
+        // Test default get ID (not set in constructor, should be null)
+        [TestMethod]
+        public void ProductModel_Get_ID_Devault_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = new ProductModel();
+
+            // Assert
+            Assert.AreEqual(result.Id, null);
+        }
 
         // Test default get ratings 
         [TestMethod]
