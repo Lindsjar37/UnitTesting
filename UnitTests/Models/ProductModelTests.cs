@@ -270,5 +270,19 @@ namespace UnitTests
             Assert.AreEqual(result.Sequence, null);
         }
 
+        // Test set sequence to valid string 
+        [TestMethod]
+        public void ProductModel_Set_Sequence_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = new ProductModel();
+            string sequence = "Sequence";
+            result.Sequence = "Sequence";
+
+            // Assert
+            Assert.AreEqual(result.Sequence, sequence);
+        }
     }
 }
