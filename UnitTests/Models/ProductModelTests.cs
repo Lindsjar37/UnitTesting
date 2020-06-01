@@ -145,6 +145,20 @@ namespace UnitTests
             CollectionAssert.AreEqual(result.Ratings, rating);
         }
 
+        // Test get description default (should be null) 
+        [TestMethod]
+        public void ProductModel_Get_Description_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = new ProductModel();
+
+            // Assert
+            Assert.AreEqual(result.Description, null);
+        }
+
+
         // Test default get date 
         [TestMethod]
         public void ProductModel_Get_Date_Default_Should_Pass()
