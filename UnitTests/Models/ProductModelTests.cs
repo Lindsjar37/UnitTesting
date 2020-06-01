@@ -130,6 +130,21 @@ namespace UnitTests
             CollectionAssert.AreEqual(rating, result.Ratings);
         }
 
+        // Test set ratings to valid int[]
+        [TestMethod]
+        public void ProductModel_Set_Ratings_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = new ProductModel();
+            result.Ratings = new int[] { 1 };
+            int[] rating = new int[] { 1 };
+
+            // Assert
+            CollectionAssert.AreEqual(result.Ratings, rating);
+        }
+
         // Test default get date 
         [TestMethod]
         public void ProductModel_Get_Date_Default_Should_Pass()
