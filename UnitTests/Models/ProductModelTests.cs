@@ -404,5 +404,20 @@ namespace UnitTests
             Assert.AreEqual(2, average);
         }
 
+        // Test get average rating total (if total == 0, return 0)  
+        [TestMethod]
+        public void ProductModel_Get_AverageRating_Total_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+            result.Ratings = new int[] {0};
+
+            // Act
+            int average = result.AverageRating();
+
+            // Assert
+            Assert.AreEqual(0, average);
+        }
+
     }
 }
