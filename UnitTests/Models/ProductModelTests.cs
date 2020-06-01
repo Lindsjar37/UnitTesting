@@ -229,5 +229,18 @@ namespace UnitTests
             Assert.AreEqual(result.Image, image);
         }
 
+        // Test get maker default (not set in constructor, should be null)
+        [TestMethod]
+        public void ProductModel_Get_Maker_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = new ProductModel();
+   
+            // Assert
+            Assert.AreEqual(result.Maker, null);
+        }
+
     }
 }
