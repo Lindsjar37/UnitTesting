@@ -386,9 +386,23 @@ namespace UnitTests
             int average = result.AverageRating();
 
             // Assert
-            Assert.AreEqual(average, 5);
+            Assert.AreEqual(5, average);
         }
 
+        // Test get average rating for multiple entries (total = 12 , count = 6 items. 12/6 = 2) 
+        [TestMethod]
+        public void ProductModel_Get_AverageRating_Valid_Should_Pass()
+        {
+            // Arrange
+            var result = new ProductModel();
+            result.Ratings = new int[] { 2, 3, 4, 1, 1, 1};
+           
+            // Act
+            int average = result.AverageRating();
+
+            // Assert
+            Assert.AreEqual(2, average);
+        }
 
     }
 }
