@@ -172,8 +172,6 @@ namespace UnitTests
             Assert.AreEqual(result.Description, "Desk Lamp");
         }
 
-
-
         // Test default get date 
         [TestMethod]
         public void ProductModel_Get_Date_Default_Should_Pass()
@@ -187,7 +185,20 @@ namespace UnitTests
             Assert.AreEqual(DateTime.UtcNow.ToShortDateString(), result.Date.ToShortDateString());
         }
 
+        // Test set date to valid date
+        [TestMethod]
+        public void ProductModel_Set_Date_Valid_Should_Pass()
+        {
+            // Arrange
 
+            // Act
+            var result = new ProductModel();
+            DateTime thisDate = new DateTime(2008, 3, 15);
+            result.Date = thisDate; 
+
+            // Assert
+            Assert.AreEqual(thisDate.ToShortDateString(), result.Date.ToShortDateString());
+        }
 
 
 
