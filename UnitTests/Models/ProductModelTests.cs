@@ -214,7 +214,20 @@ namespace UnitTests
             Assert.AreEqual(result.Image, null); 
         }
 
+        // Test set image to valid string 
+        [TestMethod]
+        public void ProductModel_Set_Image_Valid_Should_Pass()
+        {
+            // Arrange
 
+            // Act
+            var result = new ProductModel();
+            string image = "Img";
+            result.Image = "Img";
+
+            // Assert
+            Assert.AreEqual(result.Image, image);
+        }
 
     }
 }
