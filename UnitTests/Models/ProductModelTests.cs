@@ -74,6 +74,22 @@ namespace UnitTests
             Assert.AreEqual(result.Email, "Unknown");
         }
 
+        // Test set e-mail with valid string value
+        [TestMethod]
+        public void ProductModel_Set_Email_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = new ProductModel();
+            result.Email = "js@ProductModel.com";
+
+            // Assert
+            Assert.AreEqual(result.Email, "js@ProductModel.com");
+        }
+
+
+
         // Test default get ratings 
         [TestMethod]
         public void ProductModel_Get_Ratings_Default_Should_Pass()
